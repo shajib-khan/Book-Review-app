@@ -9,14 +9,9 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
         Book::factory(33)->create()->each(function ($book) {
             $numReviews = random_int(5, 30);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
             Review::factory()->count($numReviews)
                 ->good()
                 ->for($book)
