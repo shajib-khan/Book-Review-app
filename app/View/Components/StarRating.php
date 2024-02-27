@@ -8,13 +8,14 @@ use Illuminate\View\Component;
 
 class StarRating extends Component
 {
+    public ?float $rating;
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public readonly ?float $rating
+        ?float $rating
     ) {
-        //
+        $this->rating = $rating;
     }
 
     /**
